@@ -37,8 +37,6 @@ app.route("/articles")
 })
 
 .post(function(req, res){
-  console.log();
-  console.log();
 
   const newArticle = new Article ({
     title: req.body.title,
