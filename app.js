@@ -108,6 +108,16 @@ app.route("/articles/:articleTitle")
       }
     }
   );
+})
+
+  Article.findOneAndDelete(
+    { title: req.params.articleTitle }, (err)=>{
+    if (!err) {
+      res.send("Deleted the article successfully")
+    } else {
+      res.send(err);
+    }
+  });
 });
 
 app.listen(3000, function() {
